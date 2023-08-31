@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://hkpeqaujxctj"]
+
+[ext_resource type="Script" path="res://Scripts/main_game.gd" id="1_k3vrd"]
+[ext_resource type="PackedScene" uid="uid://bf4juufdgv0ea" path="res://Scenes/player.tscn" id="1_yl408"]
+[ext_resource type="Texture2D" uid="uid://d1cqhpcp58ht6" path="res://Assets/game_background.PNG" id="2_ygxef"]
+[ext_resource type="PackedScene" uid="uid://da18ia2wpw6cp" path="res://Scenes/game_hud.tscn" id="6_jieqc"]
+
+[sub_resource type="GDScript" id="GDScript_mts3t"]
+script/source = "extends CharacterBody2D
+
+class_name Bullet
+
+@export var SPEED = 100.0
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	position += SPEED * delta * Vector2.UP
+	if position.y < 0 or position.y > 1920 or position.x < 0 or position.x > 1080:
+		queue_free()
+	
+
+func _on_area_2d_body_entered(body):
+	if body is Enemy:
+		body.on_die()
+	elif body is EnemyBullet:
+		body.queue_free()
+	queue_free()
+
+
+func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	pass # Replace with function body.
+"
+
+[node name="MainGame" type="Node2D"]
+script = ExtResource("1_k3vrd")
+
+[node name="FullBackground" type="Sprite2D" parent="."]
+position = Vector2(540, 954)
+texture = ExtResource("2_ygxef")
+
+[node name="Player" parent="." instance=ExtResource("1_yl408")]
+position = Vector2(575, 1713)
+scale = Vector2(1.5, 1.5)
+
+[node name="Bullet" type="Sprite2D" parent="."]
+script = SubResource("GDScript_mts3t")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="GameHUD" parent="." instance=ExtResource("6_jieqc")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

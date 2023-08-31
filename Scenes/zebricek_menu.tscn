@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvu1yqqqvp1b6"]
+
+[ext_resource type="Script" path="res://Scripts/zebricek_menu.gd" id="1_m84ot"]
+[ext_resource type="Texture2D" uid="uid://b82mxub6lsrav" path="res://Assets/background.PNG" id="1_u8kk8"]
+[ext_resource type="Theme" uid="uid://bdrqvcy17neno" path="res://Scripts/new_theme.tres" id="2_a4k40"]
+[ext_resource type="Texture2D" uid="uid://cw20hg6xmk0uj" path="res://Assets/back_button.PNG" id="3_ccg8u"]
+[ext_resource type="Texture2D" uid="uid://blxymcu0bwauo" path="res://Assets/trash.png" id="5_fotvx"]
+[ext_resource type="FontFile" uid="uid://di5cycx7hcge4" path="res://DejaVuSansMono.ttf" id="5_i0o77"]
+[ext_resource type="FontFile" uid="uid://l5o5cic83nnx" path="res://DejaVuSansMono-Bold.ttf" id="6_46hpq"]
+[ext_resource type="AudioStream" uid="uid://bmt166xgq6x0l" path="res://Sounds/click.mp3" id="8_uq5oq"]
+
+[node name="ZebricekMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m84ot")
+
+[node name="FullBackground" type="Sprite2D" parent="."]
+position = Vector2(540, 960)
+texture = ExtResource("1_u8kk8")
+
+[node name="BackBackground" type="Sprite2D" parent="."]
+position = Vector2(283, 221)
+rotation = -0.139626
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ccg8u")
+region_enabled = true
+region_rect = Rect2(-4.51453, 574.182, 1089.88, 786.082)
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 604.0
+offset_bottom = 391.0
+theme = ExtResource("2_a4k40")
+theme_override_font_sizes/font_size = 86
+
+[node name="EraseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 873.0
+offset_right = 1082.0
+offset_bottom = 212.0
+theme = ExtResource("2_a4k40")
+theme_override_font_sizes/font_size = 86
+icon = ExtResource("5_fotvx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Table" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 142.0
+offset_top = 522.0
+offset_right = 1000.0
+offset_bottom = 1817.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 25
+theme_override_fonts/normal_font = ExtResource("5_i0o77")
+theme_override_fonts/bold_font = ExtResource("6_46hpq")
+theme_override_font_sizes/normal_font_size = 89
+theme_override_font_sizes/bold_font_size = 89
+bbcode_enabled = true
+
+[node name="TableText" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 142.0
+offset_top = 415.0
+offset_right = 1000.0
+offset_bottom = 521.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 25
+theme_override_fonts/normal_font = ExtResource("5_i0o77")
+theme_override_fonts/bold_font = ExtResource("6_46hpq")
+theme_override_font_sizes/normal_font_size = 89
+theme_override_font_sizes/bold_font_size = 89
+bbcode_enabled = true
+text = "[b]Hra  Čas  Skóre[/b]"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_uq5oq")
+
+[connection signal="mouse_entered" from="BackButton" to="." method="_on_hrat_button_mouse_entered"]
+[connection signal="mouse_exited" from="BackButton" to="." method="_on_hrat_button_mouse_exited"]
+[connection signal="pressed" from="BackButton" to="." method="_on_hrat_button_pressed"]
+[connection signal="mouse_entered" from="EraseButton" to="." method="_on_erase_button_mouse_entered"]
+[connection signal="mouse_exited" from="EraseButton" to="." method="_on_erase_button_mouse_exited"]
+[connection signal="pressed" from="EraseButton" to="." method="_on_erase_button_pressed"]

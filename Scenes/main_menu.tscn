@@ -1,0 +1,133 @@
+[gd_scene load_steps=13 format=3 uid="uid://cqfmlpwn10v6j"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_u3fg6"]
+[ext_resource type="Texture2D" uid="uid://b82mxub6lsrav" path="res://Assets/background.PNG" id="2_0w3fb"]
+[ext_resource type="Texture2D" uid="uid://cpo21x2pfosmf" path="res://Assets/hrat_button.PNG" id="3_xtv42"]
+[ext_resource type="Texture2D" uid="uid://dgdt2ga0s5j5j" path="res://Assets/zebricek.PNG" id="4_2v7ll"]
+[ext_resource type="Texture2D" uid="uid://qcht8m0gxbct" path="res://Assets/hrat_glitch.PNG" id="5_0dxg0"]
+[ext_resource type="Texture2D" uid="uid://b50742n7qpune" path="res://Assets/exit_button.PNG" id="5_e66xl"]
+[ext_resource type="Texture2D" uid="uid://dmmemw3b8h0sf" path="res://Assets/zebricek_glitch.PNG" id="6_oqyvb"]
+[ext_resource type="Texture2D" uid="uid://tq0p26ci0vax" path="res://Assets/tabor_bude.PNG" id="7_dfwag"]
+[ext_resource type="Theme" uid="uid://bdrqvcy17neno" path="res://Scripts/new_theme.tres" id="8_3gg3k"]
+[ext_resource type="AudioStream" uid="uid://bmt166xgq6x0l" path="res://Sounds/click.mp3" id="10_ibbld"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_78l1d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0dxg0")
+}],
+"loop": true,
+"name": &"Off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xtv42")
+}],
+"loop": true,
+"name": &"On",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8axrt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2v7ll")
+}],
+"loop": true,
+"name": &"Off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_oqyvb")
+}],
+"loop": true,
+"name": &"On",
+"speed": 5.0
+}]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u3fg6")
+
+[node name="FullBackground" type="Sprite2D" parent="."]
+position = Vector2(540, 954)
+texture = ExtResource("2_0w3fb")
+
+[node name="HratBackground" type="Sprite2D" parent="."]
+position = Vector2(540, 955)
+texture = ExtResource("3_xtv42")
+
+[node name="ZebricekBackground" type="Sprite2D" parent="."]
+position = Vector2(540, 954)
+texture = ExtResource("4_2v7ll")
+
+[node name="ExitBackground" type="Sprite2D" parent="."]
+position = Vector2(540, 954)
+texture = ExtResource("5_e66xl")
+
+[node name="HratSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(540, 955)
+sprite_frames = SubResource("SpriteFrames_78l1d")
+animation = &"On"
+
+[node name="ZebricekSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(540, 954)
+sprite_frames = SubResource("SpriteFrames_8axrt")
+animation = &"Off"
+
+[node name="TaborBude" type="Sprite2D" parent="."]
+position = Vector2(540, 955)
+texture = ExtResource("7_dfwag")
+
+[node name="HratButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 734.0
+offset_right = 1076.0
+offset_bottom = 1172.0
+theme = ExtResource("8_3gg3k")
+
+[node name="ZebricekButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 1170.0
+offset_right = 1077.0
+offset_bottom = 1571.0
+theme = ExtResource("8_3gg3k")
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1574.0
+offset_right = 1082.0
+offset_bottom = 1911.0
+theme = ExtResource("8_3gg3k")
+
+[node name="TaborTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ibbld")
+
+[connection signal="mouse_entered" from="HratButton" to="." method="_on_hrat_button_mouse_entered"]
+[connection signal="mouse_exited" from="HratButton" to="." method="_on_hrat_button_mouse_exited"]
+[connection signal="pressed" from="HratButton" to="." method="_on_hrat_button_pressed"]
+[connection signal="mouse_entered" from="ZebricekButton" to="." method="_on_zebricek_button_mouse_entered"]
+[connection signal="mouse_exited" from="ZebricekButton" to="." method="_on_zebricek_button_mouse_exited"]
+[connection signal="pressed" from="ZebricekButton" to="." method="_on_zebricek_button_pressed"]
+[connection signal="mouse_entered" from="ExitButton" to="." method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="ExitButton" to="." method="_on_exit_button_mouse_exited"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="timeout" from="TaborTimer" to="." method="_on_tabor_timer_timeout"]

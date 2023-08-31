@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScoreData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/zebricek_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+time = Array[int]([45])
+score = Array[int]([21])
