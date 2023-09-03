@@ -1,2 +1,9 @@
 # Godot 4+ specific ignores
 .godot/
+*.pck
+*.exe
+*.js
+*.html
+score_data.tres
+android/
+

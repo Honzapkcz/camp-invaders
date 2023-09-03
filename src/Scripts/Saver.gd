@@ -1,6 +1,6 @@
 extends Node
 
-var data: ScoreData
+var data: ScoreDat
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	loadd()
@@ -13,13 +13,13 @@ func loadd():
 	if ResourceLoader.exists("res://score_data.tres"):
 		data = ResourceLoader.load("res://score_data.tres")
 	else:
-		data = ScoreData.new()
+		data = ScoreDat.new()
 
 func saved():
 	ResourceSaver.save(data, "res://score_data.tres")
 
 func erase():
-	data = ScoreData.new()
+	data = ScoreDat.new()
 	saved()
 
 #func update_records():

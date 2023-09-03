@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://da18ia2wpw6cp"]
 
-[ext_resource type="Texture2D" uid="uid://c1wkbmxnu5030" path="res://Assets/srdce.png" id="1_2fudt"]
+[ext_resource type="Texture2D" uid="uid://c1wkbmxnu5030" path="res://Assets/srdce.png" id="1_7jgop"]
 
 [node name="GameHUD" type="Control"]
 layout_mode = 3
@@ -17,7 +17,7 @@ offset_top = 25.0
 offset_right = 69.0
 offset_bottom = 65.0
 scale = Vector2(3, 3)
-texture = ExtResource("1_2fudt")
+texture = ExtResource("1_7jgop")
 
 [node name="Srdce2" type="TextureRect" parent="."]
 layout_mode = 0
@@ -26,7 +26,7 @@ offset_top = 25.0
 offset_right = 211.0
 offset_bottom = 65.0
 scale = Vector2(3, 3)
-texture = ExtResource("1_2fudt")
+texture = ExtResource("1_7jgop")
 
 [node name="Srdce3" type="TextureRect" parent="."]
 layout_mode = 0
@@ -35,7 +35,7 @@ offset_top = 25.0
 offset_right = 352.0
 offset_bottom = 65.0
 scale = Vector2(3, 3)
-texture = ExtResource("1_2fudt")
+texture = ExtResource("1_7jgop")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

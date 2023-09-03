@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c0g23juph67fm"]
 
-[ext_resource type="Texture2D" uid="uid://bm72p1q3g07md" path="res://Assets/flashka.png" id="1_l4gbg"]
-[ext_resource type="Script" path="res://Scripts/enemy_bullet.gd" id="1_rgr2r"]
-[ext_resource type="AudioStream" uid="uid://bbe2whp551xwj" path="res://Sounds/pew.mp3" id="3_lxo6m"]
+[ext_resource type="Script" path="res://Scripts/enemy_bullet.gd" id="1_akwqm"]
+[ext_resource type="Texture2D" uid="uid://bm72p1q3g07md" path="res://Assets/flashka.png" id="2_q0pf0"]
+[ext_resource type="AudioStream" uid="uid://bbe2whp551xwj" path="res://Sounds/pew.mp3" id="3_tp7nv"]
 
 [sub_resource type="Animation" id="Animation_a2rhv"]
 length = 0.001
@@ -48,7 +48,7 @@ radius = 105.732
 [node name="EnemyBullet" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 11
-script = ExtResource("1_rgr2r")
+script = ExtResource("1_akwqm")
 SPEED = 500.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -62,7 +62,7 @@ position = Vector2(-1.5, 0)
 shape = SubResource("CircleShape2D_c77vw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_l4gbg")
+texture = ExtResource("2_q0pf0")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16
@@ -73,6 +73,6 @@ position = Vector2(-1.5, 0)
 shape = SubResource("CircleShape2D_c77vw")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_lxo6m")
+stream = ExtResource("3_tp7nv")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
