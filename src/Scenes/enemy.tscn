@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://c3g44byvjnq5w"]
 
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_1dko7"]
-[ext_resource type="Texture2D" uid="uid://c7qfjpubor6xv" path="res://Assets/hurd-mraceni.png" id="2_8q5c3"]
-[ext_resource type="AudioStream" uid="uid://03dy0g6ag60o" path="res://Sounds/boom.mp3" id="3_o4rr3"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_ruouv"]
+[ext_resource type="Texture2D" uid="uid://c7qfjpubor6xv" path="res://Assets/hurd-mraceni.png" id="2_0jtn3"]
+[ext_resource type="AudioStream" uid="uid://03dy0g6ag60o" path="res://Sounds/boom.mp3" id="3_tawix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcj0n"]
 size = Vector2(76, 129)
@@ -71,7 +71,7 @@ color_ramp = SubResource("GradientTexture1D_krpeg")
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 11
-script = ExtResource("1_1dko7")
+script = ExtResource("1_ruouv")
 SPEED = 100.0
 MOVEMENT = 250.0
 
@@ -81,7 +81,7 @@ shape = SubResource("RectangleShape2D_mcj0n")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-7.62939e-06, -0.499996)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_8q5c3")
+texture = ExtResource("2_0jtn3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "default"
@@ -100,6 +100,6 @@ explosiveness = 0.9
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_o4rr3")
+stream = ExtResource("3_tawix")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

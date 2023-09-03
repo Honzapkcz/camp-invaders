@@ -10,15 +10,16 @@ config_version=5
 
 [application]
 
-config/name="TaborBudeSkakacka"
+config/name="Camp Invaders"
+config/tags=PackedStringArray("mobile")
 run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://Assets/frame2.png"
 
 [autoload]
 
-Global="*res://Scenes/global.tscn"
 Saver="*res://Scenes/saver.tscn"
+Global="*res://Scenes/global.tscn"
 
 [display]
 
@@ -27,6 +28,7 @@ window/size/viewport_height=1920
 window/size/window_width_override=360
 window/size/window_height_override=640
 window/stretch/mode="viewport"
+window/handheld/orientation=1
 
 [input]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dppsmq117jrrx"]
 
-[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_1vmvm"]
-[ext_resource type="Texture2D" uid="uid://bxtykmvq61q0e" path="res://Assets/strela.PNG" id="1_cosf8"]
-[ext_resource type="AudioStream" uid="uid://bbe2whp551xwj" path="res://Sounds/pew.mp3" id="3_gl2dn"]
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_pv5t3"]
+[ext_resource type="Texture2D" uid="uid://bxtykmvq61q0e" path="res://Assets/strela.PNG" id="2_yexvx"]
+[ext_resource type="AudioStream" uid="uid://bbe2whp551xwj" path="res://Sounds/pew.mp3" id="3_4dypl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qabmk"]
 size = Vector2(296, 979)
@@ -10,7 +10,7 @@ size = Vector2(296, 979)
 [node name="Bullet" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 21
-script = ExtResource("1_1vmvm")
+script = ExtResource("1_pv5t3")
 SPEED = 2000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -19,7 +19,7 @@ shape = SubResource("RectangleShape2D_qabmk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
-texture = ExtResource("1_cosf8")
+texture = ExtResource("2_yexvx")
 region_enabled = true
 region_rect = Rect2(445.674, 349.019, 981.445, 295.851)
 
@@ -32,6 +32,6 @@ position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_qabmk")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_gl2dn")
+stream = ExtResource("3_4dypl")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
