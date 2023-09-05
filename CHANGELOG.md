@@ -5,6 +5,8 @@
 # TODO:
 
 - [ ] Add sound FX control singleton
+- [ ] Add mobile support (joystick)
+- [ ] Make regeneration system
 
 # VERSIONS
 
