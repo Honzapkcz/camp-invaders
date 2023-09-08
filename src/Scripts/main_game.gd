@@ -14,6 +14,9 @@ func _ready():
 	$AudioStreamPlayer.play()
 	$Timer.start(2)
 
+func _notification(what):
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
