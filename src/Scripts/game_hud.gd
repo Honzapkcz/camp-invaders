@@ -50,10 +50,10 @@ func _input(event: InputEvent):
 	get_viewport().set_input_as_handled()
 
 func _move_tip(new_position: Vector2):
-	$JoistickButton/Tip.global_position = new_position - $JoistickButton/Tip.pivot_offset * $JoistickButton.get_global_transform_with_canvas().get_scale()
+	$JoistickButton/Tip.global_position = new_position - $JoistickButton/Tip.pivot_offset * 200
 
 func _update_joystick(touch_position: Vector2):
-	var center : Vector2 = $JoistickButton.global_position + 30
+	var center : Vector2 = $JoistickButton.global_position + Vector2(30, 30)
 	var vector : Vector2 = touch_position - center
 	vector = vector.limit_length(clampzone_size)
 	
