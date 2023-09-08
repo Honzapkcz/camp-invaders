@@ -18,8 +18,8 @@ func _physics_process(delta):
 	input_vel.x = Input.get_axis("Left", "Right")
 	input_vel.y = Input.get_axis("Up", "Down")
 	
-	velocity.x = move_toward(velocity.x, input_vel.x * SPEED * delta * 10000, FRICTION)
-	velocity.y = move_toward(velocity.y, input_vel.y * SPEED * delta * 10000, FRICTION)
+	velocity.x = move_toward(velocity.x, max(min(input_vel.x + joist_vel.x, 1), -1) * SPEED * delta * 10000, FRICTION)
+	velocity.y = move_toward(velocity.y, max(min(input_vel.y + joist_vel.y, 1), -1) * SPEED * delta * 10000, FRICTION)
 	
 	if Input.is_action_just_pressed("Fire") and $Timer.is_stopped():
 		fire_bullet()
