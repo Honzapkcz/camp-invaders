@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://da18ia2wpw6cp"]
+[gd_scene load_steps=3 format=3 uid="uid://da18ia2wpw6cp"]
 
+[ext_resource type="Script" path="res://Scripts/game_hud.gd" id="1_0hofx"]
 [ext_resource type="Texture2D" uid="uid://c1wkbmxnu5030" path="res://Assets/srdce.png" id="1_7jgop"]
 
 [node name="GameHUD" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0hofx")
 
 [node name="Srdce1" type="TextureRect" parent="."]
 layout_mode = 0
@@ -60,3 +62,24 @@ theme_override_font_sizes/font_size = 100
 text = "0:00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="FireButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 830.0
+offset_top = 1665.0
+offset_right = 1030.0
+offset_bottom = 1865.0
+
+[node name="JoistickButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 1605.0
+offset_right = 208.0
+offset_bottom = 1665.0
+
+[node name="Tip" type="Button" parent="JoistickButton"]
+layout_mode = 0
+offset_left = -70.0
+offset_top = -68.0
+offset_right = 130.0
+offset_bottom = 132.0
