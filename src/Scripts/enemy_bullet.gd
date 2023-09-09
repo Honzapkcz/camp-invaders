@@ -26,7 +26,7 @@ func _ready():
 	if tex in ["res://Assets/red_mobile.png", "res://Assets/green_mobile.png"]:
 		scale = Vector2(0.125, 0.125)
 		$Area2D.scale = Vector2(4, 4)
-	$AudioStreamPlayer.play()
+	Sounds.play("pew")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

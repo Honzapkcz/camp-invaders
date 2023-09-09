@@ -11,7 +11,7 @@ var time = 0
 func _ready():
 	Global.connect("add_bullet", add_bullet)
 	Global.connect("hurt_player", on_hurt)
-	$AudioStreamPlayer.play()
+	Sounds.play("click")
 	$Timer.start(2)
 
 func _notification(what):
