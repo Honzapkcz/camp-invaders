@@ -14,7 +14,7 @@ script/source = "extends Sprite2D
 script = ExtResource("1_k3vrd")
 
 [node name="FullBackground" type="Sprite2D" parent="."]
-position = Vector2(540, 954)
+position = Vector2(540, 960)
 texture = ExtResource("2_ygxef")
 
 [node name="Player" parent="." instance=ExtResource("1_yl408")]
