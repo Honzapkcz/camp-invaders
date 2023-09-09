@@ -10,6 +10,10 @@ func _on_hrat_button_mouse_entered():
 	$HratSprite2D.play("Off")
 
 
+func _notification(what):
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
 func _on_hrat_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/main_game.tscn")
 

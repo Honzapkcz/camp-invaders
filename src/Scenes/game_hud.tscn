@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://da18ia2wpw6cp"]
+[gd_scene load_steps=5 format=3 uid="uid://da18ia2wpw6cp"]
 
+[ext_resource type="Script" path="res://Scripts/game_hud.gd" id="1_0hofx"]
 [ext_resource type="Texture2D" uid="uid://c1wkbmxnu5030" path="res://Assets/srdce.png" id="1_7jgop"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7637q"]
+size = Vector2(200, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grslm"]
+size = Vector2(200, 200)
 
 [node name="GameHUD" type="Control"]
 layout_mode = 3
@@ -9,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0hofx")
 
 [node name="Srdce1" type="TextureRect" parent="."]
 layout_mode = 0
@@ -60,3 +68,28 @@ theme_override_font_sizes/font_size = 100
 text = "0:00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="FireButton" type="TouchScreenButton" parent="."]
+position = Vector2(908, 1761)
+shape = SubResource("RectangleShape2D_7637q")
+
+[node name="Button" type="Button" parent="FireButton"]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="JoistickButton" type="TouchScreenButton" parent="."]
+position = Vector2(250, 1680)
+
+[node name="Tip" type="TouchScreenButton" parent="JoistickButton"]
+shape = SubResource("RectangleShape2D_grslm")
+
+[node name="TipBG" type="Button" parent="JoistickButton/Tip"]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+pivot_offset = Vector2(100, 100)
+
+[connection signal="pressed" from="FireButton" to="." method="_on_fire_button_pressed"]
