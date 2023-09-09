@@ -45,6 +45,7 @@ func _input(event: InputEvent):
 			_touch_index = -1
 			$JoistickButton.position = _base_default_position
 			$JoistickButton/Tip.position = _tip_default_position
+			Global.emit_signal("move_player", output)
 	elif event is InputEventScreenDrag and event.index == _touch_index:
 		_update_joystick(event.position)
 	else: return
@@ -63,6 +64,7 @@ func _update_joystick(touch_position: Vector2):
 	else:
 		is_pressed = false
 		output = Vector2.ZERO
+	Global.emit_signal("move_player", output)
 
 
 func _on_fire_button_pressed():
