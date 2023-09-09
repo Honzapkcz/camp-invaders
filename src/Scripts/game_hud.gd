@@ -34,7 +34,8 @@ func _ready():
 
 func _input(event: InputEvent):
 	if event is InputEventScreenTouch:
-		if event.pressed and $JoistickButton/Tip.pressed and _touch_index == -1:
+		if event.pressed and $JoistickButton/Tip.pressed and _touch_index == -1 \
+			and event.position.x < 500 and event.position.y > 1200:
 			_touch_index = event.index
 			_update_joystick(event.position)
 		elif event.index == _touch_index:
@@ -50,7 +51,7 @@ func _input(event: InputEvent):
 	get_viewport().set_input_as_handled()
 
 func _update_joystick(touch_position: Vector2):
-	var center : Vector2 = $JoistickButton.global_position # + Vector2(30, 30)
+	var center : Vector2 = $JoistickButton.global_position
 	var vector : Vector2 = touch_position - center
 	vector = vector.limit_length(clampzone_size)
 	
@@ -63,3 +64,6 @@ func _update_joystick(touch_position: Vector2):
 		is_pressed = false
 		output = Vector2.ZERO
 
+
+func _on_fire_button_pressed():
+	Global.emit_signal("fire_bullet")
