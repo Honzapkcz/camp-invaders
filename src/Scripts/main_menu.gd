@@ -4,7 +4,7 @@ var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
-	$AudioStreamPlayer.play()
+	Sounds.play("click")
 
 func _on_hrat_button_mouse_entered():
 	$HratSprite2D.play("Off")

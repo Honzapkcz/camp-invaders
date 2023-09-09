@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://hkpeqaujxctj"]
+[gd_scene load_steps=6 format=3 uid="uid://hkpeqaujxctj"]
 
 [ext_resource type="Script" path="res://Scripts/main_game.gd" id="1_k3vrd"]
 [ext_resource type="PackedScene" uid="uid://bf4juufdgv0ea" path="res://Scenes/player.tscn" id="1_yl408"]
 [ext_resource type="Texture2D" uid="uid://d1cqhpcp58ht6" path="res://Assets/game_background.PNG" id="2_ygxef"]
-[ext_resource type="AudioStream" uid="uid://bmt166xgq6x0l" path="res://Sounds/click.mp3" id="5_1kq4o"]
 [ext_resource type="PackedScene" uid="uid://da18ia2wpw6cp" path="res://Scenes/game_hud.tscn" id="6_jieqc"]
 
 [sub_resource type="GDScript" id="GDScript_mts3t"]
@@ -14,7 +13,7 @@ script/source = "extends Sprite2D
 script = ExtResource("1_k3vrd")
 
 [node name="FullBackground" type="Sprite2D" parent="."]
-position = Vector2(540, 954)
+position = Vector2(540, 960)
 texture = ExtResource("2_ygxef")
 
 [node name="Player" parent="." instance=ExtResource("1_yl408")]
@@ -27,8 +26,5 @@ script = SubResource("GDScript_mts3t")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="GameHUD" parent="." instance=ExtResource("6_jieqc")]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_1kq4o")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

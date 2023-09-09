@@ -49,7 +49,7 @@ func on_die():
 	$Sprite2D.visible = false
 	$CollisionPolygon2D.queue_free()
 	$GPUParticles2D.emitting = true
-	$AudioStreamPlayer.play()
+	Sounds.play("boom")
 	
 	await get_tree().create_timer(1).timeout
 	

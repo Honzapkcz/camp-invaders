@@ -8,7 +8,7 @@ func _notification(what):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_records()
-	$AudioStreamPlayer.play()
+	Sounds.play("click")
 
 func update_records():	
 	for i in len(Saver.data.time):

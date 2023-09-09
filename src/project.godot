@@ -21,6 +21,7 @@ config/icon="res://Assets/frame2.png"
 
 Saver="*res://Scenes/saver.tscn"
 Global="*res://Scenes/global.tscn"
+Sounds="*res://Scenes/sounds.tscn"
 
 [display]
 

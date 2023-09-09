@@ -22,11 +22,11 @@ func _ready():
 	$Timer.start(rng.randi_range(1, 5))
 	
 func on_die():
+	Sounds.play("boom")
 	$Timer.stop()
 	$Sprite2D.visible = false
 	$CollisionShape2D.queue_free()
 	$GPUParticles2D.emitting = true
-	$AudioStreamPlayer.play()
 	
 	await get_tree().create_timer(1).timeout
 	
