@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvu1yqqqvp1b6"]
+[gd_scene load_steps=8 format=3 uid="uid://cvu1yqqqvp1b6"]
 
 [ext_resource type="Script" path="res://Scripts/zebricek_menu.gd" id="1_tcxon"]
 [ext_resource type="Texture2D" uid="uid://b82mxub6lsrav" path="res://Assets/background.PNG" id="2_w7bw6"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://blxymcu0bwauo" path="res://Assets/trash.png" id="5_re4vv"]
 [ext_resource type="FontFile" uid="uid://di5cycx7hcge4" path="res://DejaVuSansMono.ttf" id="6_ymkkk"]
 [ext_resource type="FontFile" uid="uid://l5o5cic83nnx" path="res://DejaVuSansMono-Bold.ttf" id="7_d175w"]
-[ext_resource type="AudioStream" uid="uid://bmt166xgq6x0l" path="res://Sounds/click.mp3" id="8_ynl7e"]
 
 [node name="ZebricekMenu" type="Control"]
 layout_mode = 3
@@ -78,9 +77,6 @@ theme_override_font_sizes/normal_font_size = 89
 theme_override_font_sizes/bold_font_size = 89
 bbcode_enabled = true
 text = "[b]Hra  Čas  Skóre[/b]"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_ynl7e")
 
 [connection signal="mouse_entered" from="BackButton" to="." method="_on_hrat_button_mouse_entered"]
 [connection signal="mouse_exited" from="BackButton" to="." method="_on_hrat_button_mouse_exited"]
