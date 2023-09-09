@@ -49,15 +49,12 @@ func _input(event: InputEvent):
 	else: return
 	get_viewport().set_input_as_handled()
 
-func _move_tip(new_position: Vector2):
-	$JoistickButton/Tip.global_position = new_position - $JoistickButton/Tip.pivot_offset * 200
-
 func _update_joystick(touch_position: Vector2):
-	var center : Vector2 = $JoistickButton.global_position + Vector2(30, 30)
+	var center : Vector2 = $JoistickButton.global_position # + Vector2(30, 30)
 	var vector : Vector2 = touch_position - center
 	vector = vector.limit_length(clampzone_size)
 	
-	_move_tip(center + vector)
+	$JoistickButton/Tip.global_position = vector + center - $JoistickButton/Tip.pivot_offset
 	
 	if vector.length_squared() > deadzone_size * deadzone_size:
 		is_pressed = true
