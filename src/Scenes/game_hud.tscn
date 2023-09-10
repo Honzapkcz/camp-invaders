@@ -1,13 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://da18ia2wpw6cp"]
+[gd_scene load_steps=10 format=3 uid="uid://da18ia2wpw6cp"]
 
 [ext_resource type="Script" path="res://Scripts/game_hud.gd" id="1_0hofx"]
 [ext_resource type="Texture2D" uid="uid://c1wkbmxnu5030" path="res://Assets/srdce.png" id="1_7jgop"]
+[ext_resource type="StyleBox" uid="uid://dopuop381yntw" path="res://Scenes/round_button.tres" id="3_orrcv"]
+[ext_resource type="StyleBox" uid="uid://b41fcakqgnjfm" path="res://Scenes/round_button_hover.tres" id="4_byy3a"]
+[ext_resource type="StyleBox" uid="uid://4ptgpiqf2n2b" path="res://Scenes/round_button_pressed.tres" id="5_sh52a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7637q"]
 size = Vector2(200, 200)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0j2tq"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grslm"]
 size = Vector2(200, 200)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tsxsg"]
 
 [node name="GameHUD" type="Control"]
 layout_mode = 3
@@ -78,6 +85,10 @@ offset_left = -100.0
 offset_top = -100.0
 offset_right = 100.0
 offset_bottom = 100.0
+theme_override_styles/normal = ExtResource("3_orrcv")
+theme_override_styles/hover = ExtResource("4_byy3a")
+theme_override_styles/pressed = ExtResource("4_byy3a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0j2tq")
 
 [node name="JoistickButton" type="TouchScreenButton" parent="."]
 position = Vector2(250, 1680)
@@ -91,5 +102,9 @@ offset_top = -100.0
 offset_right = 100.0
 offset_bottom = 100.0
 pivot_offset = Vector2(100, 100)
+theme_override_styles/normal = ExtResource("3_orrcv")
+theme_override_styles/hover = ExtResource("4_byy3a")
+theme_override_styles/pressed = ExtResource("5_sh52a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsxsg")
 
 [connection signal="pressed" from="FireButton" to="." method="_on_fire_button_pressed"]
