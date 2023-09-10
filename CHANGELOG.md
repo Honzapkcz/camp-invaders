@@ -5,7 +5,7 @@
 
 # VERSIONS
 
-## 1.1.2 - Unfinished
+## 1.1.2
 
 - Cropped player bullet image
 - Restyled joistick & fire buttons
