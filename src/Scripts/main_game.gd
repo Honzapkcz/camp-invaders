@@ -50,7 +50,7 @@ func _on_timer_timeout():
 	en.position = Vector2(rng.randi_range(80, 1000), 100)
 	en.scale = Vector2(2, 2)
 	add_child(en)
-	$Timer.start(rng.randi_range(1, spawn_offset))
+	$Timer.start(rng.randf_range(1, spawn_offset))
 	spawn_offset -= 0.2
 
 func get_player_pos():
