@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://crrrl1spvaf81"]
-
-[ext_resource type="Script" path="res://Scripts/zebricek_entry.gd" id="1_lutt1"]
-
-[node name="ZebricekEntry" type="RichTextLabel"]
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("1_lutt1")

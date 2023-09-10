@@ -1,15 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://da18ia2wpw6cp"]
+[gd_scene load_steps=12 format=3 uid="uid://da18ia2wpw6cp"]
 
 [ext_resource type="Script" path="res://Scripts/game_hud.gd" id="1_0hofx"]
 [ext_resource type="Texture2D" uid="uid://c1wkbmxnu5030" path="res://Assets/srdce.png" id="1_7jgop"]
+[ext_resource type="StyleBox" uid="uid://dopuop381yntw" path="res://Scenes/round_button.tres" id="3_orrcv"]
+[ext_resource type="StyleBox" uid="uid://b41fcakqgnjfm" path="res://Scenes/round_button_hover.tres" id="4_byy3a"]
+[ext_resource type="Texture2D" uid="uid://bxtykmvq61q0e" path="res://Assets/strela.PNG" id="5_mkf4v"]
+[ext_resource type="StyleBox" uid="uid://4ptgpiqf2n2b" path="res://Scenes/round_button_pressed.tres" id="5_sh52a"]
+[ext_resource type="Texture2D" uid="uid://4dxn8flgpf4d" path="res://Assets/joistick.png" id="6_j8gjm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7637q"]
 size = Vector2(200, 200)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0j2tq"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grslm"]
-size = Vector2(200, 200)
+size = Vector2(256, 256)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tsxsg"]
 
 [node name="GameHUD" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +27,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0hofx")
+deadzone_size = 20.0
+clampzone_size = 120.0
 
 [node name="Srdce1" type="TextureRect" parent="."]
 layout_mode = 0
@@ -74,10 +86,18 @@ position = Vector2(908, 1761)
 shape = SubResource("RectangleShape2D_7637q")
 
 [node name="Button" type="Button" parent="FireButton"]
-offset_left = -100.0
+offset_left = 100.0
 offset_top = -100.0
-offset_right = 100.0
+offset_right = 300.0
 offset_bottom = 100.0
+rotation = 1.5708
+theme_override_styles/normal = ExtResource("3_orrcv")
+theme_override_styles/hover = ExtResource("4_byy3a")
+theme_override_styles/pressed = ExtResource("4_byy3a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0j2tq")
+icon = ExtResource("5_mkf4v")
+icon_alignment = 1
+expand_icon = true
 
 [node name="JoistickButton" type="TouchScreenButton" parent="."]
 position = Vector2(250, 1680)
@@ -86,10 +106,15 @@ position = Vector2(250, 1680)
 shape = SubResource("RectangleShape2D_grslm")
 
 [node name="TipBG" type="Button" parent="JoistickButton/Tip"]
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 100.0
-offset_bottom = 100.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
 pivot_offset = Vector2(100, 100)
+theme_override_styles/normal = ExtResource("3_orrcv")
+theme_override_styles/hover = ExtResource("4_byy3a")
+theme_override_styles/pressed = ExtResource("5_sh52a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsxsg")
+icon = ExtResource("6_j8gjm")
 
 [connection signal="pressed" from="FireButton" to="." method="_on_fire_button_pressed"]
