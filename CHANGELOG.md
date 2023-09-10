@@ -2,13 +2,24 @@
 
 ![< back](./README.md)
 
-# TODO:
-
-- [ ] Add sound FX control singleton
-- [ ] Add mobile support (joystick)
-- [ ] Make regeneration system
 
 # VERSIONS
+
+## 1.1.2 - Unfinished
+
+- Cropped player bullet image
+- Restyled joistick & fire buttons
+
+### 1.1.1
+
+- Optimized sound engine
+- Fixed lagging joistick
+- Player now cannot fly to top half
+
+## 1.1.0
+
+- Added joistick & fire button for touchscreens
+- Menus can now be navigated using Android back button
 
 ## 1.0.0
 
