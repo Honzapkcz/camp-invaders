@@ -46,4 +46,4 @@ func _on_timer_timeout():
 	bul.position = Vector2(position.x, position.y)
 	bul.pVec = $/root/MainGame.get_player_pos()
 	Global.emit_signal("add_bullet", bul)
-	$Timer.start(rng.randi_range(1, 5))
+	$Timer.start(rng.randf_range(1, 5))
