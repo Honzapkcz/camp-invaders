@@ -18,9 +18,9 @@ shape = SubResource("RectangleShape2D_qabmk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_yexvx")
-region_enabled = true
-region_rect = Rect2(445.674, 349.019, 981.445, 295.851)
+region_rect = Rect2(445.674, 349.019, 1466.33, 701.481)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
