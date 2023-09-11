@@ -7,7 +7,7 @@
 Online Demo On Itch.io!
 <https://honzapkcz.itch.io/camp-invaders>
 
-===
+---
 
 Go, start your engines, prepare *Killer Tootbrush Canon 2500* and shoot your enemies (in our case camp leaders)!
 
