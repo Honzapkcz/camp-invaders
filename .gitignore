@@ -2,4 +2,4 @@
 .godot/
 score_data.tres
 android/
-
+build/**
