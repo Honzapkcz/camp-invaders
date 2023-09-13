@@ -9,6 +9,6 @@ Online Demo On Itch.io!
 
 ---
 
-Go, start your engines, prepare *Killer Tootbrush Canon 2500* and shoot your enemies (in our case camp leaders)!
+Go, start your engines, prepare *Killer Tootbrush Canon 2500* and shoot down your enemies (in our case camp leaders)!
 
 For more info of what i'm (you can of course to) gonna do, look up the project *Camp Invaders* in projects tab.
