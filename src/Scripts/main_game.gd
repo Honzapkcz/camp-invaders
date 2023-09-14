@@ -2,7 +2,7 @@ extends Node2D
 
 
 var rng = RandomNumberGenerator.new()
-var enemy = preload("res://Scenes/enemy.tscn")
+var enemy = preload("res://Scenes/laser_beam.tscn")
 var spawn_offset = 5
 var score = 0
 var time = 0
